@@ -43,5 +43,6 @@ public class Movement : MonoBehaviour
         {
             arm.types[0] = 1;
         }
+        else if (collision) arm.types[1] = 2;
     }
 }

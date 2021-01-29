@@ -5,7 +5,7 @@ using UnityEngine;
 public class Arm : MonoBehaviour
 {
     public float attack;
-    public float attackSpeed;
+    public float attackVelocity;
     public float spread;
     public int[] types;
     public int weaponNumber;
@@ -27,38 +27,43 @@ public class Arm : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            weaponNumber = 2;
+            weaponNumber = 1;
             Debug.Log(2);
             switchArm();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            weaponNumber = 3;
+            weaponNumber = 2;
             switchArm();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            weaponNumber = 4;
+            weaponNumber = 3;
             switchArm();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            weaponNumber = 5;
+            weaponNumber = 4;
             switchArm();
         }
     }
 
     void switchArm()
     {
+        MagicOrb magicOrb = GetComponent<MagicOrb>();
+        GunArm gun = GetComponent<GunArm>();
+
+        magicOrb.enabled = false;
+        gun.enabled = false;
+
         switch (types[weaponNumber])
         {
             case 1:
                 //GunArm gun = gameObject.AddComponent(typeof(GunArm)) as GunArm;
-                GunArm gun = GetComponent<GunArm>();
                 gun.enabled = true;
                 break;
             case 2:
-                print("Magic");
+                magicOrb.enabled = true;
                 break;
             case 3:
                 print("Tentacle");

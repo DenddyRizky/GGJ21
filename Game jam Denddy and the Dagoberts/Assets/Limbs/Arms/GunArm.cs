@@ -11,7 +11,7 @@ public class GunArm : Arm
     void Start()
     {
         attack = 10.0f;
-        attackSpeed = 1.0f;
+        attackVelocity = 500.0f;
         spread = 1.0f;
     }
 
@@ -33,6 +33,6 @@ public class GunArm : Arm
         Debug.Log(shootDirection);
         shootDirection.Normalize();
 
-        pr.AddForce(shootDirection * 100f);
+        pr.AddForce(shootDirection * attackVelocity);
     }
 }
