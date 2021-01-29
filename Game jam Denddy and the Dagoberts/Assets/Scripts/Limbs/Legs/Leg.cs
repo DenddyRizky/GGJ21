@@ -25,32 +25,32 @@ public class Leg : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             legNumber = 1;
+            SwitchLeg();
         }else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             legNumber = 2;
+            SwitchLeg();
         }
-        
-        switch (ActiveLegs[legNumber])
-        {
-            case 1:
-                currentLeg = sneakers;
-                break;
-            case 2:
-                currentLeg = rollerskates;
-                break;
-            case 0:
-                break;
-        }
-
     }
 
     void SwitchLeg()
     {
         sneakers.enabled = false;
         rollerskates.enabled = false;
-        if(ActiveLegs[1] == 1)
-        {
 
+        switch (ActiveLegs[legNumber])
+        {
+            case 1:
+                sneakers.enabled = true;
+                currentLeg = sneakers;
+                break;
+            case 2:
+                rollerskates.enabled = true;
+                currentLeg = rollerskates;
+                break;
+            case 0:
+                currentLeg = null;
+                break;
         }
     }
 }
