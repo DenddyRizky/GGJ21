@@ -9,7 +9,7 @@ public class Rollerskates : Leg
     // Start is called before the first frame update
     void Start()
     {
-        spd = 15;
+        spd = 5;
         player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
     }
 

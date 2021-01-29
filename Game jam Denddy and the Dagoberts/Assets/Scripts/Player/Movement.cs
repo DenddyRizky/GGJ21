@@ -9,16 +9,25 @@ public class Movement : MonoBehaviour
     float horizontal;
     float vertical;
     float diagmovevar = 0.7f;
+    private Stats spd;
+    private float runSpeed = 3f;
 
-    public float runSpeed = 20.0f;
+    public Leg leg;
 
     void Start()
     {
+        leg = GetComponent<Leg>();
         body = GetComponent<Rigidbody2D>();
+        spd = GetComponent<Stats>();
     }
 
     void Update()
     {
+        if (spd.spd != 0)
+        {
+            runSpeed = spd.spd;
+        }        
+
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
     }
@@ -31,5 +40,14 @@ public class Movement : MonoBehaviour
             vertical *= diagmovevar;
         }
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Sneakers")
+        {
+            leg.ActiveLegs[1] = 1;
+            Destroy(collision.gameObject);
+        }
     }
 }
