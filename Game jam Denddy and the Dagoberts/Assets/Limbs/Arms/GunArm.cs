@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunArm : Arm
 {
     public Rigidbody2D projectile;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -17,23 +18,21 @@ public class GunArm : Arm
     // Update is called once per frame
     void Update()
     {
-        Attack();
+        if (Input.GetButtonDown("Fire1"))
+            Attack();
     }
 
     void Attack()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Vector2 target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-            Vector2 position = new Vector2(transform.position.x, transform.position.y);
+        Vector2 target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+        Vector2 position = new Vector2(transform.position.x, transform.position.y);
 
-            Rigidbody2D pr = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody2D;
+        Rigidbody2D pr = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody2D;
 
-            Vector2 shootDirection = (target - (position * -1));
-            Debug.Log(shootDirection);
-            shootDirection.Normalize();
+        Vector2 shootDirection = (target - (position * -1));
+        Debug.Log(shootDirection);
+        shootDirection.Normalize();
 
-            pr.AddForce(shootDirection * 100f);
-        }
+        pr.AddForce(shootDirection * 100f);
     }
 }

@@ -4,6 +4,10 @@ public class Movement : MonoBehaviour
 {
     Rigidbody2D body;
     public Rigidbody2D projectile;
+    public GameObject limb;
+    public Arm arm;
+
+    public bool gunArm = false;
 
     float horizontal;
     float vertical;
@@ -13,6 +17,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        arm = GetComponent<Arm>();
         body = GetComponent<Rigidbody2D>();
     }
 
@@ -20,8 +25,6 @@ public class Movement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-
-        Attack();
     }
 
     private void FixedUpdate()
@@ -36,8 +39,9 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Arm")
+        if (collision.gameObject.name == "GunArm")
         {
+            arm.types[0] = 1;
         }
     }
 }
