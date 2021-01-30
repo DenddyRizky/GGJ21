@@ -7,13 +7,14 @@ public class GunArm : Arm
     public Rigidbody2D projectile;
     public GameObject player;
     public bool enemy;
-
+    public float attackVelocity;
     // Start is called before the first frame update
     void Start()
     {
         attack = 10.0f;
         attackVelocity = 500.0f;
-        spread = 1.0f;
+
+        
     }
 
     // Update is called once per frame
@@ -25,7 +26,7 @@ public class GunArm : Arm
 
     public void Attack(Vector2 target = default(Vector2), bool Enemy = default(bool) ) {
         this.enemy = Enemy;
-        if(Enemy){
+        if(!Enemy){
             target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         }
         

@@ -7,7 +7,7 @@ public class Arm : MonoBehaviour
     public float attack;
     public int[] types;
     public int weaponNumber;
-    public Arm currentArm;
+    private Arm currentArm;
 
     // Start is called before the first frame update
     void Start()
