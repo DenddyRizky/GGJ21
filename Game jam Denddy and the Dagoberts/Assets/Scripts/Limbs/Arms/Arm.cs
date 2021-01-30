@@ -5,10 +5,9 @@ using UnityEngine;
 public class Arm : MonoBehaviour
 {
     public float attack;
-    public float attackVelocity;
-    public float spread;
     public int[] types;
     public int weaponNumber;
+    public Arm currentArm;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +18,7 @@ public class Arm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             weaponNumber = 0;
             Debug.Log(0);
@@ -52,24 +51,38 @@ public class Arm : MonoBehaviour
     {
         MagicOrb magicOrb = GetComponent<MagicOrb>();
         GunArm gun = GetComponent<GunArm>();
+        TentacleSlap tentacle = GetComponent<TentacleSlap>();
+        LongNails nails = GetComponent<LongNails>();
+        SlappyHand slap = GetComponent<SlappyHand>();
 
         magicOrb.enabled = false;
         gun.enabled = false;
+        tentacle.enabled = false;
+        nails.enabled = false;
+        slap.enabled = true;
+        currentArm = slap;
 
         switch (types[weaponNumber])
         {
             case 1:
-                //GunArm gun = gameObject.AddComponent(typeof(GunArm)) as GunArm;
+                slap.enabled = false;
                 gun.enabled = true;
+                currentArm = gun;
                 break;
             case 2:
+                slap.enabled = false;
                 magicOrb.enabled = true;
+                currentArm = magicOrb;
                 break;
             case 3:
-                print("Tentacle");
+                slap.enabled = false;
+                tentacle.enabled = true;
+                currentArm = tentacle;
                 break;
             case 4:
-                print("Nails");
+                slap.enabled = false;
+                nails.enabled = true;
+                currentArm = nails;
                 break;
             case 5:
                 print("Basic");
