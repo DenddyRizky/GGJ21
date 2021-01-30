@@ -55,15 +55,19 @@ public class Movement : MonoBehaviour
         {
             leg.ActiveLegs[2] = 2;
             Destroy(collision.gameObject);
+        }else if(collision.gameObject.name == "SpikeBoots")
+        {
+            leg.ActiveLegs[3] = 3;
+            Destroy(collision.gameObject);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "GunArm")
-        {
-            arm.types[0] = 1;
-        }
-        else if (collision) arm.types[1] = 2;
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.name == "GunArm")
+    //    {
+    //        arm.types[0] = 1;
+    //    }
+    //    else if (collision) arm.types[1] = 2;
+    //}
 }
