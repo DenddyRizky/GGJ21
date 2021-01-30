@@ -22,12 +22,15 @@ public class MagicOrb : Arm
     void Update()
     {
         
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
             Attack();
 
+        if (Input.GetButtonUp("Fire1"))
+            lr.enabled = false;
     }
     void Attack()
     {
+        lr.enabled = true;
         var mousePos = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition);
 
         lr.SetPosition(0, firePoint.transform.position);

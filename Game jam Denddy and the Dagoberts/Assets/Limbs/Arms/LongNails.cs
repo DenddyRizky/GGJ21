@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class LongNails : Arm
 {
+    public Transform attackPoint;
+    public int attackRange = 5;
+    public LayerMask enemyLayers;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +17,25 @@ public class LongNails : Arm
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1"))
+            Attack();
+    }
+
+    void Attack()
+    {
+        Debug.Log("ATTACK");
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("HIT");
+        }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

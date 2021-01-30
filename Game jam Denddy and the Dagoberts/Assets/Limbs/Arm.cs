@@ -5,8 +5,6 @@ using UnityEngine;
 public class Arm : MonoBehaviour
 {
     public float attack;
-    public float attackVelocity;
-    public float spread;
     public int[] types;
     public int weaponNumber;
     public Arm currentArm;
