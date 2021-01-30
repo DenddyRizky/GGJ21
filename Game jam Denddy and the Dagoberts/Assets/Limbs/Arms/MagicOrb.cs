@@ -14,8 +14,6 @@ public class MagicOrb : Arm
     {
         maxLength = 10;
         attack = 10.0f;
-        attackVelocity = 100.0f;
-        spread = 1.0f;
     }
 
     // Update is called once per frame

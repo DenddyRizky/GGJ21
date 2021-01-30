@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     float vertical;
     float diagmovevar = 0.7f;
 
-    public float runSpeed = 20.0f;
+    public float runSpeed = 10.0f;
 
     void Start()
     {
@@ -45,5 +45,6 @@ public class Movement : MonoBehaviour
         }
         else if (collision.gameObject.name == "MagicOrb") arm.types[1] = 2;
         else if (collision.gameObject.name == "Tentacle") arm.types[2] = 3;
+        else if (collision.gameObject.name == "Nails") arm.types[3] = 4;
     }
 }

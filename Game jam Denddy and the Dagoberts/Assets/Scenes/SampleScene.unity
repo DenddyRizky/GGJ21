@@ -502,8 +502,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 0
-  attackVelocity: 0
-  spread: 0
   types: 
   weaponNumber: 0
   currentArm: {fileID: 0}
@@ -520,13 +518,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 0
-  attackVelocity: 0
-  spread: 0
   types: 
   weaponNumber: 0
   currentArm: {fileID: 0}
   projectile: {fileID: 1039306748}
   player: {fileID: 0}
+  attackVelocity: 0
 --- !u!114 &875366296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,8 +537,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 0
-  attackVelocity: 0
-  spread: 0
   types: 
   weaponNumber: 0
   currentArm: {fileID: 0}
@@ -562,8 +557,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 0
-  attackVelocity: 0
-  spread: 0
   types: 
   weaponNumber: 0
   currentArm: {fileID: 0}
@@ -585,11 +578,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 0
-  attackVelocity: 0
-  spread: 0
   types: 
   weaponNumber: 0
   currentArm: {fileID: 0}
+  attackPoint: {fileID: 280535034}
+  attackRange: 5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  size: {x: -0.5038333, y: 0.8638009}
 --- !u!1 &906829470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,7 +1054,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.084796354
 --- !u!212 &1516062164
 SpriteRenderer:
   m_ObjectHideFlags: 0

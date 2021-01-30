@@ -17,6 +17,12 @@ public class TentacleSlap : Arm
     // Update is called once per frame
     void Update()
     {
+        Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mouseDir = (Vector2)(worldMousePos - transform.position);
+
+        mouseDir.Normalize();
+        attackPoint.position = (Vector2)transform.position + mouseDir;
+
         if (Input.GetButtonDown("Fire1"))
             Attack();
     }
