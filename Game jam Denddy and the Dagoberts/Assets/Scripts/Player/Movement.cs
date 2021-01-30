@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
     public Leg leg;
     public Torso torso;
 
+    Animator anim;
+
     float horizontal;
     float vertical;
     float diagmovevar = 0.7f;
@@ -26,6 +28,7 @@ public class Movement : MonoBehaviour
         spd = GetComponent<Stats>();
         arm = GetComponent<Arm>();
         torso = GetComponent<Torso>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -37,6 +40,9 @@ public class Movement : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+
+        anim.SetFloat("Horizontal", horizontal);
+        anim.SetFloat("Vertical", vertical);
     }
 
     private void FixedUpdate()
@@ -47,6 +53,8 @@ public class Movement : MonoBehaviour
             vertical *= diagmovevar;
         }
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
