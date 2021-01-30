@@ -11,31 +11,34 @@ public class GunArm : Arm
     // Start is called before the first frame update
     void Start()
     {
-        attack = 10.0f;
+        attackCD = false;
         attackVelocity = 500.0f;
-
-        
+        cooldown = cooldownTime - attackRate;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !enemy)
+
+        CheckAttackCD();
+
+        if (Input.GetButtonDown("Fire1") && !attackCD && !enemy)
             Attack();
+
     }
 
     public void Attack(Vector2 target = default(Vector2), bool Enemy = default(bool) ) {
         this.enemy = Enemy;
+        attackCD = true;
         if(!Enemy){
             target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         }
+        Vector2 position = transform.position;
         
-        Vector2 position = new Vector2(transform.position.x, transform.position.y);
-
         Rigidbody2D pr = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody2D;
 
-        Vector2 shootDirection = (target - (position * -1));
-        Debug.Log(shootDirection);
+        Vector2 shootDirection = (target - position);
+        
         shootDirection.Normalize();
 
         pr.AddForce(shootDirection * attackVelocity);

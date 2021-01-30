@@ -33,6 +33,8 @@ public class LongNails : Arm
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        attackCD = false;
+        cooldown = cooldownTime - attackRate;
     }
 
     // Update is called once per frame
@@ -44,7 +46,9 @@ public class LongNails : Arm
         mouseDir.Normalize();
         attackPoint.position = (Vector2)transform.position + mouseDir;
 
-        if (Input.GetButtonDown("Fire1"))
+        CheckAttackCD();
+
+        if (Input.GetButtonDown("Fire1") & !attackCD)
             Attack();
 
         switch (state)
@@ -76,6 +80,7 @@ public class LongNails : Arm
 
     void Attack()
     {
+        attackCD = true;
         size = mouseDir;
         Debug.Log(size);
 

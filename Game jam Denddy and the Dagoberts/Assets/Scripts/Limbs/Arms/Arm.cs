@@ -1,13 +1,17 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Arm : MonoBehaviour
 {
     public float attack;
+    public float attackRate;
     public int[] types;
     public int weaponNumber;
-    private Arm currentArm;
+    public bool attackCD;
+    public float cooldownTime;
+    public float cooldown;
+    public Arm currentArm;
 
     // Start is called before the first frame update
     void Start()
@@ -90,6 +94,19 @@ public class Arm : MonoBehaviour
             default:
                 Debug.Log("BROKE");
                 break;
+        }
+    }
+    public void CheckAttackCD()
+    {
+        if (attackCD && cooldown >= 0)
+        {
+            cooldown -= Time.deltaTime;
+            Debug.Log(cooldown);
+            if (cooldown <= 0)
+            {
+                attackCD = false;
+                cooldown = cooldownTime - attackRate;
+            }
         }
     }
 }
