@@ -6,13 +6,13 @@ public class GunArm : Arm
 {
     public Rigidbody2D projectile;
     public GameObject player;
+    public float attackVelocity;
 
     // Start is called before the first frame update
     void Start()
     {
         attack = 10.0f;
         attackVelocity = 500.0f;
-        spread = 1.0f;
     }
 
     // Update is called once per frame
