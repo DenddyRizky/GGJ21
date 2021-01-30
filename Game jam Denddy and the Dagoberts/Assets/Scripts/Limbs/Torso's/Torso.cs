@@ -8,6 +8,7 @@ public class Torso : MonoBehaviour
     public int[] activeTorso;
     public int hp;
     public int torsoNumber;
+    public bool equipped;
     public Torso currentTorso;
     public ChitinArmour chitinArmour;
     public TentacleBody tentacleBody;
@@ -43,7 +44,8 @@ public class Torso : MonoBehaviour
 
     void SwitchTorso()
     {
-        
+        tentacleBody.enabled = false;
+        chitinArmour.enabled = false;
 
         switch (activeTorso[torsoNumber])
         {
@@ -54,6 +56,7 @@ public class Torso : MonoBehaviour
                 break;
             case 2:
                 tentacleBody.enabled = true;
+                tentacleBody.equipped = true;
                 currentTorso = tentacleBody;
                 break;
             case 3:
