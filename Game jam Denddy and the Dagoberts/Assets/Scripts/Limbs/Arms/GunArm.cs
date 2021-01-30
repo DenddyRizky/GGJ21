@@ -30,6 +30,7 @@ public class GunArm : Arm
     public void Attack(Vector2 target = default(Vector2), bool Enemy = default(bool) ) {
         this.enemy = Enemy;
         attackCD = true;
+
         if(!Enemy){
             target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         }

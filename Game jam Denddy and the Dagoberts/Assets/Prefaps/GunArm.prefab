@@ -95,8 +95,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 0
+  attackRate: 9
   types: 
   weaponNumber: 0
+  attackCD: 0
+  cooldownTime: 10
+  cooldown: 0
   currentArm: {fileID: 0}
   projectile: {fileID: 2882878773929087774, guid: 5cbe40759afba044490aaef4c55847a5,
     type: 3}

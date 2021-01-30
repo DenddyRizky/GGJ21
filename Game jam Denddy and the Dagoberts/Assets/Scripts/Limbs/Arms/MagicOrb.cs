@@ -15,6 +15,7 @@ public class MagicOrb : Arm
     // Start is called before the first frame update
     void Start()
     {
+        enemy = false;
         attack = 10.0f;
         if (GetComponentInParent<EnemyControllerScript>() != null)
         {
@@ -36,7 +37,7 @@ public class MagicOrb : Arm
     {
         
         lr.enabled = true;
-        if (!enemy)
+        if (enemy)
         {
             point = firePoint.transform.position;
              target = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition);
