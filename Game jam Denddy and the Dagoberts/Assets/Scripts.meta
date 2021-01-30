@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: b1130a013b03c1e4fb4671a1d57b91dd
+<<<<<<< HEAD:Game jam Denddy and the Dagoberts/Assets/Scripts/Limbs.meta
+guid: 66ea0c955ed1db4468e5d4e26870e891
+=======
+guid: 88072d7197a1a7943bffa9ed99443007
+>>>>>>> Enemy-Basic:Game jam Denddy and the Dagoberts/Assets/Scripts.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

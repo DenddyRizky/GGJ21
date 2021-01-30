@@ -4,72 +4,56 @@ using UnityEngine;
 
 public class MagicOrb : Arm
 {
-    public GameObject beamStart;
-    public GameObject beamMid;
-    public GameObject beamEnd;
-
-    private GameObject start;
-    private GameObject middle;
-    private GameObject end;
+    public Camera cam;
+    public GameObject firePoint;
+    public LineRenderer lr;
+    public float maxLength;
+    public LayerMask beamLayer;
+    private Vector2 point;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        attack = 10.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
             Attack();
 
+        if (Input.GetButtonUp("Fire1"))
+            lr.enabled = false;
     }
     void Attack()
     {
-        if (start == null)
+        point = firePoint.transform.position;
+        lr.enabled = true;
+        var mousePos = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 angle = new Vector2((mousePos.x - point.x), (mousePos.y - point.y));
+        angle.Normalize();
+
+        Vector2 maxRangeBeam = point + (angle * maxLength);
+
+        lr.SetPosition(0, point);
+
+        Vector2 angleToMouse = maxRangeBeam - mousePos;
+        Vector2 angleToPoint = maxRangeBeam - point;
+        angleToMouse.Normalize();
+        angleToPoint.Normalize();
+
+        if (angleToMouse != angleToPoint)
         {
-            start = Instantiate(beamStart) as GameObject;
-            start.transform.parent = this.transform;
-            Debug.Log(start.transform.parent);
-        }
-
-        if (middle == null)
+            lr.SetPosition(1, maxRangeBeam);
+        } else
         {
-            middle = Instantiate(beamMid) as GameObject;
-            middle.transform.parent = this.transform;
-            middle.transform.localPosition = Vector2.zero;
+            lr.SetPosition(1, mousePos);
         }
+    }
 
-        float maxSize = 20f;
-        float currentSize = maxSize;
-
-        Vector2 beamDirection = this.transform.right;
-
-        RaycastHit2D hit = Physics2D.Raycast(
-            this.transform.position,
-            beamDirection,
-            maxSize);
-
-        if (hit.collider != null)
-        {
-            currentSize = Vector2.Distance(hit.point, this.transform.position);
-
-            if (end == null)
-            {
-                end = Instantiate(beamEnd) as GameObject;
-                end.transform.parent = this.transform;
-                end.transform.localPosition = Vector2.zero;
-            }
-        }
-        else
-        {
-            if (end != null) Destroy(end);
-        }
-
-        if (end != null)
-        {
-            end.transform.localPosition = new Vector2(currentSize, 0f);
-        }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(point, maxLength);
     }
 }
