@@ -315,6 +315,10 @@ GameObject:
   - component: {fileID: 1583378948}
   - component: {fileID: 1583378953}
   - component: {fileID: 1583378954}
+  - component: {fileID: 1583378958}
+  - component: {fileID: 1583378957}
+  - component: {fileID: 1583378956}
+  - component: {fileID: 1583378955}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -462,6 +466,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1583378955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583378947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6dbb3e91b6682742b4a8f070f8f20c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spd: 0
+  ActiveLegs: 
+  legNumber: 0
+  currentLeg: {fileID: 0}
+  rollerskates: {fileID: 0}
+  sneakers: {fileID: 0}
+  spikeBoots: {fileID: 0}
+--- !u!114 &1583378956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583378947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9b8781d1592df498d5f750ffc83e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spd: 0
+  ActiveLegs: 
+  legNumber: 0
+  currentLeg: {fileID: 0}
+  rollerskates: {fileID: 0}
+  sneakers: {fileID: 0}
+  spikeBoots: {fileID: 0}
+--- !u!114 &1583378957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583378947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b20919228188242ba0db70ed7b28eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spd: 0
+  ActiveLegs: 
+  legNumber: 0
+  currentLeg: {fileID: 0}
+  rollerskates: {fileID: 0}
+  sneakers: {fileID: 0}
+  spikeBoots: {fileID: 0}
+  player: {fileID: 0}
+  dashSpeed: 0
+  originalDashSpeed: 0
+  maxDashDist: 0
+--- !u!114 &1583378958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583378947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ced1e9a9b363a4ca0ed400b0899efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spd: 0
+  ActiveLegs: 
+  legNumber: 0
+  currentLeg: {fileID: 0}
+  rollerskates: {fileID: 0}
+  sneakers: {fileID: 0}
+  spikeBoots: {fileID: 0}
 --- !u!1 &1676716821
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class Head : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        heal = stats.maxhp / 2;
+//        heal = stats.maxhp / 2;
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

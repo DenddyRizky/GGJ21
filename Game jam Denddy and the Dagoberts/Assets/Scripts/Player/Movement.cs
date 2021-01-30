@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        runSpeed = 3f;
+        //runSpeed = 3f;
         head = GetComponent<Head>();
         leg = GetComponent<Leg>();
         body = GetComponent<Rigidbody2D>();
