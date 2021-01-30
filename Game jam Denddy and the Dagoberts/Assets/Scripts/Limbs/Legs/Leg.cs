@@ -10,12 +10,14 @@ public class Leg : MonoBehaviour
     public Leg currentLeg;
     public Rollerskates rollerskates;
     public Sneakers sneakers;
+    public SpikeBoots spikeBoots;
     // Start is called before the first frame update
     void Start()
     {   
         rollerskates = GetComponent<Rollerskates>();
         sneakers = GetComponent<Sneakers>();
-        ActiveLegs = new int[3];
+        spikeBoots = GetComponent<SpikeBoots>();
+        ActiveLegs = new int[4];
         spd = 3;
     }
 
@@ -30,6 +32,10 @@ public class Leg : MonoBehaviour
         {
             legNumber = 2;
             SwitchLeg();
+        }else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            legNumber = 3;
+            SwitchLeg();
         }
     }
 
@@ -37,6 +43,7 @@ public class Leg : MonoBehaviour
     {
         sneakers.enabled = false;
         rollerskates.enabled = false;
+        spikeBoots.enabled = false;
 
         switch (ActiveLegs[legNumber])
         {
@@ -47,6 +54,10 @@ public class Leg : MonoBehaviour
             case 2:
                 rollerskates.enabled = true;
                 currentLeg = rollerskates;
+                break;
+            case 3:
+                spikeBoots.enabled = true;
+                currentLeg = spikeBoots;
                 break;
             case 0:
                 currentLeg = null;
