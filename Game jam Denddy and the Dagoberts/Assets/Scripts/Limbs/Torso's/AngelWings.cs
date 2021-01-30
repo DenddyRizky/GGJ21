@@ -13,6 +13,14 @@ public class AngelWings : Torso
     // Update is called once per frame
     void Update()
     {
-        
+        if (equipped)
+        {
+            Flight();
+        }
+    }
+
+    void Flight()
+    {
+
     }
 }
