@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 
     public GameObject limb;
     public Arm arm;
+    public Head head;
     float horizontal;
     float vertical;
     float diagmovevar = 0.7f;
@@ -18,6 +19,8 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        runSpeed = 3f;
+        head = GetComponent<Head>();
         leg = GetComponent<Leg>();
         body = GetComponent<Rigidbody2D>();
         spd = GetComponent<Stats>();
@@ -26,11 +29,10 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (spd.spd != 0)
-        {
-            runSpeed = spd.spd;
-        }        
-
+//        if (spd.spd != 0)
+//        {
+//            runSpeed = spd.spd;
+//        }        
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
     }
@@ -45,19 +47,36 @@ public class Movement : MonoBehaviour
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Sneakers")
         {
             leg.ActiveLegs[1] = 1;
             Destroy(collision.gameObject);
-        }else if(collision.gameObject.name == "RollerSkates")
+        }
+        else if (collision.gameObject.name == "RollerSkates")
         {
             leg.ActiveLegs[2] = 2;
             Destroy(collision.gameObject);
-        }else if(collision.gameObject.name == "SpikeBoots")
+        }
+        else if (collision.gameObject.name == "SpikeBoots")
         {
             leg.ActiveLegs[3] = 3;
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.name == "Sharingans")
+        {
+            head.ActiveHeads[1] = 1;
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.name == "ScaryFace")
+        {
+            head.ActiveHeads[2] = 2;
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.name == "Teeth")
+        {
+            head.ActiveHeads[3] = 3;
             Destroy(collision.gameObject);
         }
     }

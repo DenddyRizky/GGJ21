@@ -7,15 +7,20 @@ public class Head : MonoBehaviour
     public int[] ActiveHeads;
     public int headNumber;
     public Head currentHead;
+    public Stats stats;
+    private int heal;
     // Start is called before the first frame update
     void Start()
     {
-        ActiveHeads = new int[3];
+        ActiveHeads = new int[4];
+        stats = GetComponent<Stats>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        heal = stats.maxhp / 2;
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             headNumber = 1;
@@ -31,6 +36,15 @@ public class Head : MonoBehaviour
             headNumber = 3;
             switchHead();
         }
+
+//        if (receive deathsignal)
+//        {
+//            if (headNumber == 3)
+//            {
+//                stats.hp += heal ;
+//            }
+//        }
+        
     }
 
     void switchHead()

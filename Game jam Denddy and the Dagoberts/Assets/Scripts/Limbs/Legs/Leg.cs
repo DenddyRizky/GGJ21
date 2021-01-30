@@ -24,6 +24,7 @@ public class Leg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Inputs only work if particular parts are unlocked in Movement.cs
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             legNumber = 1;
