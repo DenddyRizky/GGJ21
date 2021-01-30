@@ -5,7 +5,7 @@ using UnityEngine;
 public class Leg : MonoBehaviour
 {
     public float spd;
-    public int[] ActiveLegs;
+    public int[] activeLegs;
     public int legNumber;
     public Leg currentLeg;
     public Rollerskates rollerskates;
@@ -17,7 +17,7 @@ public class Leg : MonoBehaviour
         rollerskates = GetComponent<Rollerskates>();
         sneakers = GetComponent<Sneakers>();
         spikeBoots = GetComponent<SpikeBoots>();
-        ActiveLegs = new int[4];
+        activeLegs = new int[4];
         spd = 3;
     }
 
@@ -45,7 +45,7 @@ public class Leg : MonoBehaviour
         rollerskates.enabled = false;
         spikeBoots.enabled = false;
 
-        switch (ActiveLegs[legNumber])
+        switch (activeLegs[legNumber])
         {
             case 1:
                 sneakers.enabled = true;
