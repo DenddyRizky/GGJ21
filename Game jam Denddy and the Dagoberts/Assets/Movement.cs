@@ -43,6 +43,7 @@ public class Movement : MonoBehaviour
         {
             arm.types[0] = 1;
         }
-        else if (collision) arm.types[1] = 2;
+        else if (collision.gameObject.name == "MagicOrb") arm.types[1] = 2;
+        else if (collision.gameObject.name == "Tentacle") arm.types[2] = 3;
     }
 }

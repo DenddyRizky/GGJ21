@@ -9,6 +9,7 @@ public class Arm : MonoBehaviour
     public float spread;
     public int[] types;
     public int weaponNumber;
+    public Arm currentArm;
 
     // Start is called before the first frame update
     void Start()
@@ -52,24 +53,31 @@ public class Arm : MonoBehaviour
     {
         MagicOrb magicOrb = GetComponent<MagicOrb>();
         GunArm gun = GetComponent<GunArm>();
+        TentacleSlap tentacle = GetComponent<TentacleSlap>();
+        LongNails nails = GetComponent<LongNails>();
 
         magicOrb.enabled = false;
         gun.enabled = false;
+        tentacle.enabled = false;
+        nails.enabled = false;
 
         switch (types[weaponNumber])
         {
             case 1:
-                //GunArm gun = gameObject.AddComponent(typeof(GunArm)) as GunArm;
                 gun.enabled = true;
+                currentArm = gun;
                 break;
             case 2:
                 magicOrb.enabled = true;
+                currentArm = magicOrb;
                 break;
             case 3:
-                print("Tentacle");
+                tentacle.enabled = true;
+                currentArm = tentacle;
                 break;
             case 4:
-                print("Nails");
+                nails.enabled = true;
+                currentArm = nails;
                 break;
             case 5:
                 print("Basic");

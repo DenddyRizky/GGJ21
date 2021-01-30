@@ -4,72 +4,33 @@ using UnityEngine;
 
 public class MagicOrb : Arm
 {
-    public GameObject beamStart;
-    public GameObject beamMid;
-    public GameObject beamEnd;
-
-    private GameObject start;
-    private GameObject middle;
-    private GameObject end;
+    public Camera cam;
+    public GameObject firePoint;
+    public LineRenderer lr;
+    public int maxLength;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        maxLength = 10;
+        attack = 10.0f;
+        attackVelocity = 100.0f;
+        spread = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetButtonDown("Fire1"))
             Attack();
 
     }
     void Attack()
     {
-        if (start == null)
-        {
-            start = Instantiate(beamStart) as GameObject;
-            start.transform.parent = this.transform;
-            Debug.Log(start.transform.parent);
-        }
+        var mousePos = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition);
 
-        if (middle == null)
-        {
-            middle = Instantiate(beamMid) as GameObject;
-            middle.transform.parent = this.transform;
-            middle.transform.localPosition = Vector2.zero;
-        }
-
-        float maxSize = 20f;
-        float currentSize = maxSize;
-
-        Vector2 beamDirection = this.transform.right;
-
-        RaycastHit2D hit = Physics2D.Raycast(
-            this.transform.position,
-            beamDirection,
-            maxSize);
-
-        if (hit.collider != null)
-        {
-            currentSize = Vector2.Distance(hit.point, this.transform.position);
-
-            if (end == null)
-            {
-                end = Instantiate(beamEnd) as GameObject;
-                end.transform.parent = this.transform;
-                end.transform.localPosition = Vector2.zero;
-            }
-        }
-        else
-        {
-            if (end != null) Destroy(end);
-        }
-
-        if (end != null)
-        {
-            end.transform.localPosition = new Vector2(currentSize, 0f);
-        }
+        lr.SetPosition(0, firePoint.transform.position);
+        lr.SetPosition(1, mousePos);
     }
 }
