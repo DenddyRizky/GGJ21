@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 875366296}
   - component: {fileID: 875366297}
   - component: {fileID: 875366298}
+  - component: {fileID: 875366299}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -582,11 +583,34 @@ MonoBehaviour:
   weaponNumber: 0
   currentArm: {fileID: 0}
   attackPoint: {fileID: 280535034}
-  attackRange: 5
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
-  size: {x: -0.5038333, y: 0.8638009}
+  dashSpeed: 0
+  originalDashSpeed: 55
+  maxDashDist: 2.5
+  size: {x: -0.45880365, y: 0.88853765}
+--- !u!114 &875366299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875366288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579a611d6c5048245845b4d70ebe2a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 0
+  types: 
+  weaponNumber: 0
+  currentArm: {fileID: 0}
+  attackPoint: {fileID: 280535034}
+  attackRange: 0.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &906829470
 GameObject:
   m_ObjectHideFlags: 0
