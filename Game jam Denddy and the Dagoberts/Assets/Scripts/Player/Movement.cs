@@ -58,19 +58,16 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.name == "Sneakers")
         {
-            leg.ActiveLegs[1] = 1;
             leg.activeLegs[1] = 1;
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.name == "RollerSkates")
         {
-            leg.ActiveLegs[2] = 2;
             leg.activeLegs[2] = 2;
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.name == "SpikeBoots")
         {
-            leg.ActiveLegs[3] = 3;
             leg.activeLegs[3] = 3;
             Destroy(collision.gameObject);
         }
