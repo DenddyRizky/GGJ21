@@ -80,15 +80,15 @@ public class Movement : MonoBehaviour
 
         if(collision.gameObject.name == "ChitinArmour")
         {
-            torso.activeTorso[1] = 1;
+            torso.activeTorso[0] = 1;
             Destroy(collision.gameObject);
         }else if(collision.gameObject.name == "TentacleBody")
         {
-            torso.activeTorso[2] = 2;
+            torso.activeTorso[1] = 2;
             Destroy(collision.gameObject);
         }else if(collision.gameObject.name == "AngelWings")
         {
-            torso.activeTorso[3] = 3;
+            torso.activeTorso[2] = 3;
             Destroy(collision.gameObject);
         }
     }

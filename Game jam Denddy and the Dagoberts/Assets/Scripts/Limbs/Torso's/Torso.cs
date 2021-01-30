@@ -29,15 +29,15 @@ public class Torso : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            torsoNumber = 1;
+            torsoNumber = 0;
             SwitchTorso();
         }else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            torsoNumber = 2;
+            torsoNumber = 1;
             SwitchTorso();
         }else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            torsoNumber = 3;
+            torsoNumber = 2;
             SwitchTorso();
         }
     }
@@ -46,6 +46,7 @@ public class Torso : MonoBehaviour
     {
         tentacleBody.enabled = false;
         chitinArmour.enabled = false;
+        angelWings.enabled = false;
 
         switch (activeTorso[torsoNumber])
         {
@@ -61,6 +62,7 @@ public class Torso : MonoBehaviour
                 break;
             case 3:
                 angelWings.enabled = true;
+                angelWings.equipped = true;
                 currentTorso = angelWings;
                 break;
             case 0:
