@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 245d14278b7fed944b52ac98c6ba8db7
+<<<<<<< HEAD:Game jam Denddy and the Dagoberts/Assets/Animation/HearthController.meta
+guid: 99cf971cbec059a4bbf013a603c4e0f4
+=======
+guid: 56f496e2a6b17cc4591364697e5ea7e7
+>>>>>>> main:Game jam Denddy and the Dagoberts/Assets/Scripts/Limbs/Arms.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

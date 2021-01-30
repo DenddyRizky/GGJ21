@@ -110,6 +110,6 @@ public class LongNails : Arm
 
         mouseDir.Normalize();
         size = mouseDir;
-        Gizmos.DrawWireCube(attackPoint.position,size);
+        Gizmos.DrawWireCube(attackPoint.position, size);
     }
 }
