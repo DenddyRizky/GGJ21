@@ -51,8 +51,13 @@ public class Movement : MonoBehaviour
         {
             leg.ActiveLegs[1] = 1;
             Destroy(collision.gameObject);
+        }else if(collision.gameObject.name == "RollerSkates")
+        {
+            leg.ActiveLegs[2] = 2;
+            Destroy(collision.gameObject);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "GunArm")
