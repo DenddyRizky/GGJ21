@@ -10,6 +10,11 @@ public class TentacleSlap : Arm
     Vector3 worldMousePos;
     Vector2 mouseDir;
 
+    private void Start()
+    {
+        attackCD = false;
+        cooldown = cooldownTime - attackRate;
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,12 +25,15 @@ public class TentacleSlap : Arm
         mouseDir.Normalize();
         attackPoint.position = (Vector2)transform.position + mouseDir;
 
-        if (Input.GetButtonDown("Fire1"))
+        CheckAttackCD();
+
+        if (Input.GetButtonDown("Fire1") & !attackCD)
             Attack();
     }
 
     void Attack()
     {
+        attackCD = true;
         Debug.Log("ATTACK");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 

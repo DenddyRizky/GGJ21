@@ -7,19 +7,19 @@ public class MagicOrb : Arm
     public Camera cam;
     public GameObject firePoint;
     public LineRenderer lr;
-    public int maxLength;
+    public float maxLength;
+    public LayerMask beamLayer;
+    private Vector2 point;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxLength = 10;
         attack = 10.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         if (Input.GetButton("Fire1"))
             Attack();
 
@@ -28,10 +28,32 @@ public class MagicOrb : Arm
     }
     void Attack()
     {
+        point = firePoint.transform.position;
         lr.enabled = true;
         var mousePos = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 angle = new Vector2((mousePos.x - point.x), (mousePos.y - point.y));
+        angle.Normalize();
 
-        lr.SetPosition(0, firePoint.transform.position);
-        lr.SetPosition(1, mousePos);
+        Vector2 maxRangeBeam = point + (angle * maxLength);
+
+        lr.SetPosition(0, point);
+
+        Vector2 angleToMouse = maxRangeBeam - mousePos;
+        Vector2 angleToPoint = maxRangeBeam - point;
+        angleToMouse.Normalize();
+        angleToPoint.Normalize();
+
+        if (angleToMouse != angleToPoint)
+        {
+            lr.SetPosition(1, maxRangeBeam);
+        } else
+        {
+            lr.SetPosition(1, mousePos);
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(point, maxLength);
     }
 }
