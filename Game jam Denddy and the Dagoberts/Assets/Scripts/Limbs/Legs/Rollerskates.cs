@@ -5,14 +5,26 @@ using UnityEngine;
 public class Rollerskates : Leg
 
 {
+    private enum State
+    {
+        Normal,
+        Dashing,
+    }
+
     public Rigidbody2D player;
-    private Vector3 target;
+    private Vector3 moveDirection;
     public float dashSpeed;
+    public float originalDashSpeed;
     public float maxDashDist;
+    private State state;
 
     Vector3 mousePos;
     Vector3 mouseDir;
 
+    private void Awake()
+    {
+        state = State.Normal;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -20,41 +32,69 @@ public class Rollerskates : Leg
         player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+        //x = Input.GetAxisRaw("Horizontal");
+        //y = Input.GetAxisRaw("Vertical");
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            moveDirection = (transform.position - mousePos);
+            moveDirection.z = 0;
+            moveDirection.Normalize();
+            dashSpeed = originalDashSpeed;
+            state = State.Dashing;
+        }
+
+        switch (state)
+        {
+            case State.Normal:
+
+                break;
+            case State.Dashing:
+                float dashSpeedMultiplier = 5f;
+                dashSpeed -= dashSpeed * dashSpeedMultiplier * Time.deltaTime;
+
+                float dashSpeedMinimum = 50f;
+                if (dashSpeed < dashSpeedMinimum)
+                    state = State.Normal;
+                break;
+
+        }
+
+    }
+
+    void FixedUpdate()
+    {
+
+        switch (state)
+        {
+            case State.Normal:
+                break;
+            case State.Dashing:
+                player.velocity = -moveDirection * dashSpeed;
+                break;
+        }
 
         mouseDir = mousePos - transform.position;
         
         Debug.DrawRay(transform.position, mouseDir, Color.green);
 
-        if (Input.GetButtonDown("Jump"))
-        {   
-            Debug.Log("We goin");
-            Dash(x, y);
-        }
+        //if (dash)
+        //{               
+        //    Dash(x, y);
+        //    dash = false;
+        //}
 
     }
 
     void Dash(float x, float y)
     {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 moveDirection = (transform.position - mousePos);
-        moveDirection.z = 0;
-        moveDirection.Normalize();
 
-        //player.velocity = Vector2.zero;
-        //moveDirection = new Vector2(mousePos.x, mousePos.y);
-
-        player.AddForce(-moveDirection * dashSpeed);
-        Debug.Log((-moveDirection * dashSpeed));
-        //this.transform.position = Vector2.MoveTowards(transform.position, dir, maxDashDist);
-        //mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //mousePos.z = 0;
+        //player.velocity = Vector2.zero;        
+        //player.velocity = Vector2.MoveTowards(transform.position, -moveDirection * dashSpeed, maxDashDist);
         //
-        //target = (mousePos - this.transform.position).normalized;
-        //player.AddForce(target * dashSpeed);
+        //Debug.Log("We goin");
+        //Debug.Log((-moveDirection * dashSpeed));
     }
 }
