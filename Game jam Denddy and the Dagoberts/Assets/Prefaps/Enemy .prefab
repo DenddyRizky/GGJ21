@@ -309,15 +309,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   libsTypes:
-  - {fileID: 4623733101451521860, guid: f5aa09398db41bb488855d774d9badd0, type: 3}
-  - {fileID: 3382892793743070253, guid: 5cbe40759afba044490aaef4c55847a5, type: 3}
-  - {fileID: 7787871242102782723, guid: 02675d0bc4c78d245a14ceffcb6d64e2, type: 3}
+  - {fileID: 4623733101451521860, guid: 07493e0df42016b4ba8e93174107d624, type: 3}
+  - {fileID: 4623733101451521860, guid: 07493e0df42016b4ba8e93174107d624, type: 3}
+  - {fileID: 4623733101451521860, guid: 07493e0df42016b4ba8e93174107d624, type: 3}
   LibSlots:
   - {fileID: 832623620246925857}
   - {fileID: 832623620369677285}
   - {fileID: 832623619963158197}
   - {fileID: 832623619679181945}
   - {fileID: 832623619459891085}
+  player: {fileID: 8555107739394632484, guid: 80a40fffcf4214640a209bd93d8604dc, type: 3}
   maxLibCount: 5
   timer: 0
   checkTime: 0

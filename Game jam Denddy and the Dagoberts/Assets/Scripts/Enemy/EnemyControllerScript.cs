@@ -6,9 +6,14 @@ public class EnemyControllerScript : MonoBehaviour
 {
     public List<GameObject> libsTypes;
     public List<GameObject> LibSlots;
+
+    public GameObject player;
     
     protected bool attackMode = false;
     protected float attackRange;
+
+    public float attackTimer;
+    public float attackTime;
 
     public int maxLibCount;
 
@@ -21,6 +26,8 @@ public class EnemyControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attackTime = 3;
+
         positionList = new List<Vector3>();
         for (int i = 0; i < maxLibCount; i++)
         {
@@ -38,6 +45,16 @@ public class EnemyControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (attackTimer > attackTime)
+        {
+            foreach (var item in LibSlots)
+            {
+                item.GetComponent<GunArm>().Attack(player.transform.position, true) ;
+            }
+            attackTimer = 0;
+        }
+        attackTimer += Time.deltaTime;
         timer += Time.deltaTime;
     }
 

@@ -6,6 +6,7 @@ public class GunArm : Arm
 {
     public Rigidbody2D projectile;
     public GameObject player;
+    public bool enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +19,16 @@ public class GunArm : Arm
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !enemy)
             Attack();
     }
 
-    void Attack()
-    {
-        Vector2 target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+    public void Attack(Vector2 target = default(Vector2), bool Enemy = default(bool) ) {
+        this.enemy = Enemy;
+        if(Enemy){
+            target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+        }
+        
         Vector2 position = new Vector2(transform.position.x, transform.position.y);
 
         Rigidbody2D pr = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody2D;
