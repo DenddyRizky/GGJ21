@@ -13,42 +13,48 @@ public class Arm : MonoBehaviour
     public float cooldown;
     public Arm currentArm;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-        types = new int[5];
+       int[] types = { 1, 2, 3, 4, 5 };
+
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             weaponNumber = 0;
             Debug.Log(0);
             switchArm();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             weaponNumber = 1;
             Debug.Log(2);
             switchArm();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             weaponNumber = 2;
             switchArm();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             weaponNumber = 3;
             switchArm();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             weaponNumber = 4;
             switchArm();
         }
+        anim.SetInteger("Arms", weaponNumber);
     }
 
     void switchArm()

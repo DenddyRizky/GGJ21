@@ -13,13 +13,16 @@ public class Torso : MonoBehaviour
     public TentacleBody tentacleBody;
     public AngelWings angelWings;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         chitinArmour = GetComponent<ChitinArmour>();
         tentacleBody = GetComponent<TentacleBody>();
         angelWings = GetComponent<AngelWings>();
-        activeTorso = new int[3];
+        anim = GetComponent<Animator>();
+        activeTorso = new int[4];
         hp = 5;
     }
 
@@ -29,6 +32,7 @@ public class Torso : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             torsoNumber = 1;
+            
             SwitchTorso();
         }else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -39,6 +43,7 @@ public class Torso : MonoBehaviour
             torsoNumber = 3;
             SwitchTorso();
         }
+        anim.SetInteger("Armour", torsoNumber);
     }
 
     void SwitchTorso()
@@ -48,9 +53,11 @@ public class Torso : MonoBehaviour
         switch (activeTorso[torsoNumber])
         {
             case 1:
+                
                 chitinArmour.enabled = true;
                 chitinArmour.equipped = true;
                 currentTorso = chitinArmour;
+                
                 break;
             case 2:
                 tentacleBody.enabled = true;

@@ -7,12 +7,13 @@ public class GunArm : Arm
     public Rigidbody2D projectile;
     public GameObject player;
     public float attackVelocity;
+    public Vector2 StartPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         attackCD = false;
-        attackVelocity = 500.0f;
+        attackVelocity = 300.0f;
         cooldown = cooldownTime - attackRate;
     }
 
@@ -29,11 +30,11 @@ public class GunArm : Arm
     {
         attackCD = true;
         Vector2 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 position = transform.position;
+        StartPosition = transform.position;
 
         Rigidbody2D pr = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody2D;
 
-        Vector2 shootDirection = (target - position);
+        Vector2 shootDirection = (target - StartPosition);
         Debug.Log(shootDirection);
         shootDirection.Normalize();
 
