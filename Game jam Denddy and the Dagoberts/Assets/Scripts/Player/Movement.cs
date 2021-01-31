@@ -10,13 +10,11 @@ public class Movement : MonoBehaviour
 
     private Stats spd;
     public Arm arm;
-<<<<<<< HEAD
     public Head head;
-=======
     public Leg leg;
     public Torso torso;
+    public bool fallen;
 
->>>>>>> main
     float horizontal;
     float vertical;
     float diagmovevar = 0.7f;
@@ -32,26 +30,40 @@ public class Movement : MonoBehaviour
         spd = GetComponent<Stats>();
         arm = GetComponent<Arm>();
         torso = GetComponent<Torso>();
+        fallen = false;
     }
 
     void Update()
     {
-//        if (spd.spd != 0)
-//        {
-//            runSpeed = spd.spd;
-//        }        
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        if (!fallen)
+        {
+            if (spd.spd != 0)
+            {
+                runSpeed = spd.spd;
+            }
+
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+        }
+
     }
 
     private void FixedUpdate()
     {
-        if (horizontal != 0 && vertical != 0)
+        if (!fallen)
         {
-            horizontal *= diagmovevar;
-            vertical *= diagmovevar;
+            if (horizontal != 0 && vertical != 0 & !fallen)
+            {
+                horizontal *= diagmovevar;
+                vertical *= diagmovevar;
+            }
+            body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
         }
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        else
+        {
+            body.velocity = Vector2.zero;
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -72,20 +84,23 @@ public class Movement : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+
         if(collision.gameObject.name == "ChitinArmour")
         {
-            torso.activeTorso[1] = 1;
+            torso.activeTorso[0] = 0;
             Destroy(collision.gameObject);
         }else if(collision.gameObject.name == "TentacleBody")
         {
-            torso.activeTorso[2] = 2;
+            torso.activeTorso[1] = 1;
             Destroy(collision.gameObject);
         }else if(collision.gameObject.name == "AngelWings")
         {
-            torso.activeTorso[3] = 3;
+            torso.activeTorso[2] = 2;
             Destroy(collision.gameObject);
         }
-        else if (collision.gameObject.name == "Sharingans")
+
+
+        if (collision.gameObject.name == "Sharingans")
         {
             head.ActiveHeads[1] = 1;
             Destroy(collision.gameObject);
@@ -102,12 +117,4 @@ public class Movement : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.name == "GunArm")
-    //    {
-    //        arm.types[0] = 1;
-    //    }
-    //    else if (collision) arm.types[1] = 2;
-    //}
 }
