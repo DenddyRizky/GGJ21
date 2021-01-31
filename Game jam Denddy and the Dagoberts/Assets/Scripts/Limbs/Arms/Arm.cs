@@ -6,7 +6,7 @@ public class Arm : MonoBehaviour
 {
     public float attack;
     public float attackRate;
-    public int[] types;
+    public int[] activeArms;
     public int weaponNumber;
     public bool attackCD;
     public float cooldownTime;
@@ -16,7 +16,7 @@ public class Arm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        types = new int[5];
+        activeArms = new int[5];
     }
 
     // Update is called once per frame
@@ -24,29 +24,27 @@ public class Arm : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            weaponNumber = 0;
-            Debug.Log(0);
+            weaponNumber =1;
             switchArm();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            weaponNumber = 1;
-            Debug.Log(2);
+            weaponNumber = 2;
             switchArm();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            weaponNumber = 2;
+            weaponNumber = 3;
             switchArm();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            weaponNumber = 3;
+            weaponNumber = 4;
             switchArm();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            weaponNumber = 4;
+            weaponNumber = 5;
             switchArm();
         }
     }
@@ -66,7 +64,7 @@ public class Arm : MonoBehaviour
         slap.enabled = true;
         currentArm = slap;
 
-        switch (types[weaponNumber])
+        switch (activeArms[weaponNumber])
         {
             case 1:
                 slap.enabled = false;

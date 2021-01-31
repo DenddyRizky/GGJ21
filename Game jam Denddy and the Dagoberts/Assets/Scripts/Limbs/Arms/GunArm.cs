@@ -5,7 +5,6 @@ using UnityEngine;
 public class GunArm : Arm
 {
     public Rigidbody2D projectile;
-    public GameObject player;
     public float attackVelocity;
 
     // Start is called before the first frame update
@@ -32,6 +31,7 @@ public class GunArm : Arm
         Vector2 position = transform.position;
 
         Rigidbody2D pr = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody2D;
+        pr.gameObject.SetActive(true);
 
         Vector2 shootDirection = (target - position);
         Debug.Log(shootDirection);

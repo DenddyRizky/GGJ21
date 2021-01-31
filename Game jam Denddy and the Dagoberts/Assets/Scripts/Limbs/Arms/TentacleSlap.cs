@@ -5,7 +5,7 @@ using UnityEngine;
 public class TentacleSlap : Arm
 {
     public Transform attackPoint;
-    public float attackRange;
+    public float attackRadius;
     public LayerMask enemyLayers;
     Vector3 worldMousePos;
     Vector2 mouseDir;
@@ -35,7 +35,7 @@ public class TentacleSlap : Arm
     {
         attackCD = true;
         Debug.Log("ATTACK");
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, enemyLayers);
 
         foreach(Collider2D enemy in hitEnemies)
         {
@@ -47,6 +47,6 @@ public class TentacleSlap : Arm
         if (attackPoint == null)
             return;
 
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
 }

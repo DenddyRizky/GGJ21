@@ -80,15 +80,33 @@ public class Movement : MonoBehaviour
 
         if(collision.gameObject.name == "ChitinArmour")
         {
-            torso.activeTorso[0] = 1;
+            torso.activeTorso[1] = 1;
             Destroy(collision.gameObject);
         }else if(collision.gameObject.name == "TentacleBody")
         {
-            torso.activeTorso[1] = 2;
+            torso.activeTorso[2] = 2;
             Destroy(collision.gameObject);
         }else if(collision.gameObject.name == "AngelWings")
         {
-            torso.activeTorso[2] = 3;
+            torso.activeTorso[3] = 3;
+            Destroy(collision.gameObject);
+        }
+
+        if(collision.gameObject.name == "GunArm")
+        {
+            arm.activeArms[1] = 1;
+            Destroy(collision.gameObject);
+        } else if (collision.gameObject.name == "MagicOrb")
+        {
+            arm.activeArms[2] = 2;
+            Destroy(collision.gameObject);
+        } else if (collision.gameObject.name == "TentacleSlap")
+        {
+            arm.activeArms[3] = 3;
+            Destroy(collision.gameObject);
+        } else if (collision.gameObject.name == "LongNails")
+        {
+            arm.activeArms[4] = 4;
             Destroy(collision.gameObject);
         }
     }
@@ -97,8 +115,8 @@ public class Movement : MonoBehaviour
     //{
     //    if (collision.gameObject.name == "GunArm")
     //    {
-    //        arm.types[0] = 1;
+    //        arm.activeArms[0] = 1;
     //    }
-    //    else if (collision) arm.types[1] = 2;
+    //    else if (collision) arm.activeArms[1] = 2;
     //}
 }

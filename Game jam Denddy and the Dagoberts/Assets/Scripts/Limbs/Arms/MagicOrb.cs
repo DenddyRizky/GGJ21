@@ -29,9 +29,10 @@ public class MagicOrb : Arm
     void Attack()
     {
         point = firePoint.transform.position;
+        //Debug.Log(point);
         lr.enabled = true;
         var mousePos = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 angle = new Vector2((mousePos.x - point.x), (mousePos.y - point.y));
+        Vector2 angle = mousePos - point;
         angle.Normalize();
 
         Vector2 maxRangeBeam = point + (angle * maxLength);
@@ -50,10 +51,43 @@ public class MagicOrb : Arm
         {
             lr.SetPosition(1, mousePos);
         }
+
+        DrawCollider(lr);
+    }
+
+    void DrawCollider(LineRenderer lr)
+    {
+        var ec = gameObject.AddComponent<EdgeCollider2D>();
+        ec.isTrigger = true;
+        Vector3[] points = new Vector3[lr.positionCount];
+        lr.GetPositions(points);
+
+        Vector2[] pointsList = new Vector2[lr.positionCount];
+
+        for (int i=0; i<2; i++)
+        {
+            Debug.Log("BEFORE " + points[i]);
+            pointsList[i] = points[i];
+            Debug.Log("AFTER " + lr.transform.TransformPoint(points[i]));
+        }
+
+        //Debug.Log("POINT 1: " + pointsList[0]);
+        //Debug.Log("POINT 2: " + pointsList[1]);
+
+        ec.points = pointsList;
+        Destroy(ec, 0.2f);
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(point, maxLength);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemies")
+        {
+            Debug.Log("HIT");
+        }
     }
 }

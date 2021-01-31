@@ -29,15 +29,15 @@ public class Torso : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            torsoNumber = 0;
+            torsoNumber = 1;
             SwitchTorso();
         }else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            torsoNumber = 1;
+            torsoNumber = 2;
             SwitchTorso();
         }else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            torsoNumber = 2;
+            torsoNumber = 3;
             SwitchTorso();
         }
     }

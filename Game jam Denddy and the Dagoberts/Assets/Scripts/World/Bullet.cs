@@ -4,26 +4,41 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float bulletTime = 5.0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float bulletTime;
 
     // Update is called once per frame
     void Update()
     {
         bulletTime -= Time.deltaTime;
-        if (bulletTime < 0) Destroy(this);
+        if (bulletTime < 0) Destroy(this.gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Environment")
+        if (collision.gameObject.tag == "Enemies")
         {
-            //hit
-            Destroy(this);
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+
         }
-    }
+        else if (collision.gameObject.tag == "Environment")
+        {
+            Destroy(this.gameObject);
+        }
+    }*/
+
+    /*private void OnTriggerExit2D(Collider2D collision)
+    {
+        //Maybe do the collision in the enemy
+
+        if (collision.gameObject.tag == "Enemies")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+            
+        } else if (collision.gameObject.tag == "Environment")
+        {
+            Destroy(this.gameObject);
+        }
+    }*/
 }
