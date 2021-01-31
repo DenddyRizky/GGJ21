@@ -8,7 +8,6 @@ public class Torso : MonoBehaviour
     public int[] activeTorso;
     public int hp;
     public int torsoNumber;
-    public bool equipped;
     public Torso currentTorso;
     public ChitinArmour chitinArmour;
     public TentacleBody tentacleBody;
@@ -29,24 +28,22 @@ public class Torso : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            torsoNumber = 0;
+            torsoNumber = 1;
             SwitchTorso();
         }else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            torsoNumber = 1;
+            torsoNumber = 2;
             SwitchTorso();
         }else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            torsoNumber = 2;
+            torsoNumber = 3;
             SwitchTorso();
         }
     }
 
     void SwitchTorso()
     {
-        tentacleBody.enabled = false;
-        chitinArmour.enabled = false;
-        angelWings.enabled = false;
+        
 
         switch (activeTorso[torsoNumber])
         {
@@ -57,12 +54,10 @@ public class Torso : MonoBehaviour
                 break;
             case 2:
                 tentacleBody.enabled = true;
-                tentacleBody.equipped = true;
                 currentTorso = tentacleBody;
                 break;
             case 3:
                 angelWings.enabled = true;
-                angelWings.equipped = true;
                 currentTorso = angelWings;
                 break;
             case 0:

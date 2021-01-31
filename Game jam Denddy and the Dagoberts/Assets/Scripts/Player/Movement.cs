@@ -12,7 +12,6 @@ public class Movement : MonoBehaviour
     public Arm arm;
     public Leg leg;
     public Torso torso;
-    public bool fallen;
 
     float horizontal;
     float vertical;
@@ -22,7 +21,6 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        fallen = false;
         leg = GetComponent<Leg>();
         body = GetComponent<Rigidbody2D>();
         spd = GetComponent<Stats>();
@@ -32,34 +30,23 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (!fallen)
+        if (spd.spd != 0)
         {
-            if (spd.spd != 0)
-            {
-                runSpeed = spd.spd;
-            }        
+            runSpeed = spd.spd;
+        }        
 
-            horizontal = Input.GetAxisRaw("Horizontal");
-            vertical = Input.GetAxisRaw("Vertical");
-        }
-
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
     }
 
     private void FixedUpdate()
     {
-        if (!fallen)
+        if (horizontal != 0 && vertical != 0)
         {
-            if (horizontal != 0 && vertical != 0 &! fallen)
-            {
-                horizontal *= diagmovevar;
-                vertical *= diagmovevar;
-            }
-            body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-        } else
-        {
-            body.velocity = Vector2.zero;
+            horizontal *= diagmovevar;
+            vertical *= diagmovevar;
         }
-
+        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -82,17 +69,17 @@ public class Movement : MonoBehaviour
 
         if (collision.gameObject.name == "ChitinArmour")
         {
-            torso.activeTorso[0] = 1;
+            torso.activeTorso[1] = 1;
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.name == "TentacleBody")
         {
-            torso.activeTorso[1] = 2;
+            torso.activeTorso[2] = 2;
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.name == "AngelWings")
         {
-            torso.activeTorso[2] = 3;
+            torso.activeTorso[3] = 3;
             Destroy(collision.gameObject);
         }
 
