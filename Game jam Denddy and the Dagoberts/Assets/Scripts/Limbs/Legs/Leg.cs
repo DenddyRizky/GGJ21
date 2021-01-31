@@ -11,9 +11,11 @@ public class Leg : MonoBehaviour
     public Rollerskates rollerskates;
     public Sneakers sneakers;
     public SpikeBoots spikeBoots;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
-    {   
+    {
+        anim = GetComponent<Animator>();
         rollerskates = GetComponent<Rollerskates>();
         sneakers = GetComponent<Sneakers>();
         spikeBoots = GetComponent<SpikeBoots>();
@@ -37,6 +39,7 @@ public class Leg : MonoBehaviour
             legNumber = 3;
             SwitchLeg();
         }
+        anim.SetInteger("Leg", legNumber);
     }
 
     void SwitchLeg()

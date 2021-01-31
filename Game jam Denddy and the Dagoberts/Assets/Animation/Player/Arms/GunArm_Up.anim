@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GunArm_Down
+  m_Name: GunArm_Up
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,40 +20,34 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 2512880782842169770, guid: 8c95d617be8be414fbe40b805c89eb40,
-        type: 3}
+      value: {fileID: 0}
     - time: 0.25
-      value: {fileID: 3622549036171049116, guid: 8c95d617be8be414fbe40b805c89eb40,
+      value: {fileID: 7471546858491948877, guid: 8c95d617be8be414fbe40b805c89eb40,
         type: 3}
     - time: 0.5
-      value: {fileID: 2512880782842169770, guid: 8c95d617be8be414fbe40b805c89eb40,
-        type: 3}
+      value: {fileID: 0}
     - time: 0.75
-      value: {fileID: 3622549036171049116, guid: 8c95d617be8be414fbe40b805c89eb40,
+      value: {fileID: 7471546858491948877, guid: 8c95d617be8be414fbe40b805c89eb40,
         type: 3}
     - time: 1
-      value: {fileID: 2512880782842169770, guid: 8c95d617be8be414fbe40b805c89eb40,
-        type: 3}
+      value: {fileID: 0}
     attribute: m_Sprite
     path: Arms/Left
     classID: 212
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: -6456099397413955930, guid: 8c95d617be8be414fbe40b805c89eb40,
-        type: 3}
+      value: {fileID: 0}
     - time: 0.25
-      value: {fileID: -8457535705735305727, guid: 8c95d617be8be414fbe40b805c89eb40,
+      value: {fileID: 2414392391188069813, guid: 8c95d617be8be414fbe40b805c89eb40,
         type: 3}
     - time: 0.5
-      value: {fileID: -6456099397413955930, guid: 8c95d617be8be414fbe40b805c89eb40,
-        type: 3}
+      value: {fileID: 0}
     - time: 0.75
-      value: {fileID: -8457535705735305727, guid: 8c95d617be8be414fbe40b805c89eb40,
+      value: {fileID: 2414392391188069813, guid: 8c95d617be8be414fbe40b805c89eb40,
         type: 3}
     - time: 1
-      value: {fileID: -6456099397413955930, guid: 8c95d617be8be414fbe40b805c89eb40,
-        type: 3}
+      value: {fileID: 0}
     attribute: m_Sprite
     path: Arms/Right
     classID: 212
@@ -80,16 +74,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 2512880782842169770, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
-    - {fileID: 3622549036171049116, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
-    - {fileID: 2512880782842169770, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
-    - {fileID: 3622549036171049116, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
-    - {fileID: 2512880782842169770, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
-    - {fileID: -6456099397413955930, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
-    - {fileID: -8457535705735305727, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
-    - {fileID: -6456099397413955930, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
-    - {fileID: -8457535705735305727, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
-    - {fileID: -6456099397413955930, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
+    - {fileID: 0}
+    - {fileID: 7471546858491948877, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
+    - {fileID: 0}
+    - {fileID: 7471546858491948877, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 2414392391188069813, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
+    - {fileID: 0}
+    - {fileID: 2414392391188069813, guid: 8c95d617be8be414fbe40b805c89eb40, type: 3}
+    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
