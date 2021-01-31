@@ -25,11 +25,17 @@ public class Stats : MonoBehaviour
     //adjusting all stats based on gained buffs and upgrades
     void Update()
     {
+<<<<<<< HEAD
         if (head.headNumber == 1)
             atkspd *= 0.6f;
         else atkspd *= 1f;
         if (torso.currentTorso != null)
             hp = torso.currentTorso.hp;
+=======
+        //if (torso.currentTorso != null)
+        //    hp = torso.currentTorso.hp;
+
+>>>>>>> main
         if (leg.currentLeg != null)
             spd = leg.currentLeg.spd;
 

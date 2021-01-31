@@ -9,21 +9,32 @@ public class SlappyHand : Arm
     public LayerMask enemyLayers;
     Vector3 worldMousePos;
     Vector2 mouseDir;
+    bool enemy; 
 
     // Update is called once per frame
     void Update()
     {
-        worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseDir = (Vector2)(worldMousePos - transform.position);
-
-        mouseDir.Normalize();
-        attackPoint.position = (Vector2)transform.position + mouseDir;
+        enemy = false;
 
         if (Input.GetButtonDown("Fire1"))
             Attack();
     }
-    void Attack()
+    public void Attack(Vector2 target = default(Vector2), bool Enemy = default(bool))
     {
+        this.enemy = Enemy;
+        if (!enemy)
+        {
+            worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseDir = (Vector2)(worldMousePos - transform.position);
+
+            mouseDir.Normalize();
+            attackPoint.position = (Vector2)transform.position + mouseDir;
+        }
+        else
+        {
+        }
+        
+
         Debug.Log("ATTACK");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 

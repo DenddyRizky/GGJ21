@@ -1,0 +1,536 @@
+fileFormatVersion: 2
+guid: f4700bd09c747a84bbd189da260ca586
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5818951633510244144
+    second: All_directions_walk_cycle_Sneakers_0
+  - first:
+      213: -614599452431771135
+    second: All_directions_walk_cycle_Sneakers_1
+  - first:
+      213: -6781732650911151163
+    second: All_directions_walk_cycle_Sneakers_2
+  - first:
+      213: 7457310177087455927
+    second: All_directions_walk_cycle_Sneakers_3
+  - first:
+      213: 896647922406356287
+    second: All_directions_walk_cycle_Sneakers_4
+  - first:
+      213: 1841232014484865439
+    second: All_directions_walk_cycle_Sneakers_5
+  - first:
+      213: -3882269786322682927
+    second: All_directions_walk_cycle_Sneakers_6
+  - first:
+      213: -3055692081032316597
+    second: All_directions_walk_cycle_Sneakers_7
+  - first:
+      213: 750978718574082561
+    second: All_directions_walk_cycle_Sneakers_8
+  - first:
+      213: 6751413409461578758
+    second: All_directions_walk_cycle_Sneakers_9
+  - first:
+      213: 4452473614839078676
+    second: All_directions_walk_cycle_Sneakers_10
+  - first:
+      213: -6741882281037175061
+    second: All_directions_walk_cycle_Sneakers_11
+  - first:
+      213: 9180195486967372844
+    second: All_directions_walk_cycle_Sneakers_12
+  - first:
+      213: 5738503941272173790
+    second: All_directions_walk_cycle_Sneakers_13
+  - first:
+      213: 7910808366926397387
+    second: All_directions_walk_cycle_Sneakers_14
+  - first:
+      213: -1348319370771484898
+    second: All_directions_walk_cycle_Sneakers_15
+  - first:
+      213: -547300201458334649
+    second: All_directions_walk_cycle_Sneakers_16
+  - first:
+      213: 5774519314606164182
+    second: All_directions_walk_cycle_Sneakers_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 244
+        width: 30
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f9e883ea111c050800000000000000
+      internalID: 5818951633510244144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 244
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a97a6ed018877f0800000000000000
+      internalID: -614599452431771135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 245
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cbc5ccc51272e1a0800000000000000
+      internalID: -6781732650911151163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 244
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b204357810bd7760800000000000000
+      internalID: 7457310177087455927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_4
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 244
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f357f97e888817c00800000000000000
+      internalID: 896647922406356287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_5
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 160
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91827c03ce5d8910800000000000000
+      internalID: 1841232014484865439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_6
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 160
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db3100d2386f1ac0800000000000000
+      internalID: -3882269786322682927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_7
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 161
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b493817fd300895d0800000000000000
+      internalID: -3055692081032316597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_8
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 160
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a7c7a6a230c6a00800000000000000
+      internalID: 750978718574082561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_9
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 160
+        width: 30
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c24c2b9b6d1bd50800000000000000
+      internalID: 6751413409461578758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_10
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 84
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f5848992d5acd30800000000000000
+      internalID: 4452473614839078676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_11
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 84
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be6674119c50072a0800000000000000
+      internalID: -6741882281037175061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_12
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 4
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c9559182b966f70800000000000000
+      internalID: 9180195486967372844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_13
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 4
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edcf4b14ee243af40800000000000000
+      internalID: 5738503941272173790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_14
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 5
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcff5d4eb46d8cd60800000000000000
+      internalID: 7910808366926397387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_15
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 7
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f236d0daec94de0800000000000000
+      internalID: -1348319370771484898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_16
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 7
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7448392dd599768f0800000000000000
+      internalID: -547300201458334649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_directions_walk_cycle_Sneakers_17
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 5
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d88bbfc8b6332050800000000000000
+      internalID: 5774519314606164182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
