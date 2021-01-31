@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyControllerScript : MonoBehaviour
 {
-    public List<GameObject> libsTypes;
-    public List<GameObject> LibSlots;
+    public List<GameObject> limbsTypes;
+    public List<GameObject> LimbSlots;
     public List<Arm> arms; 
     
 
@@ -34,15 +34,15 @@ public class EnemyControllerScript : MonoBehaviour
         quaternionList = new List<Quaternion>();
         for (int i = 0; i < maxLibCount; i++)
         {
-            positionList.Add(LibSlots[i].transform.position);
-            quaternionList.Add(LibSlots[i].transform.rotation);
+            positionList.Add(LimbSlots[i].transform.position);
+            quaternionList.Add(LimbSlots[i].transform.rotation);
 
         }
         for (int i = 0; i < maxLibCount; i++)
         {
-            LibSlots[i] = Instantiate(libsTypes[Random.Range(0, libsTypes.Count)] , gameObject.transform);
-            LibSlots[i].transform.position = positionList[i];
-            LibSlots[i].transform.rotation = quaternionList[i];
+            LimbSlots[i] = Instantiate(limbsTypes[Random.Range(0, limbsTypes.Count)] , gameObject.transform);
+            LimbSlots[i].transform.position = positionList[i];
+            LimbSlots[i].transform.rotation = quaternionList[i];
         }
      
 
@@ -55,7 +55,7 @@ public class EnemyControllerScript : MonoBehaviour
         if (attackTimer > attackTime)
         {
             
-            foreach (var item in LibSlots)
+            foreach (var item in LimbSlots)
             {
 
                 string name = item.name;
@@ -70,6 +70,9 @@ public class EnemyControllerScript : MonoBehaviour
                         break;
                     case "SlappyArm":
                         item.GetComponent<SlappyHand>().Attack(player.transform.position, true);
+                        break;
+                    case "Rollerskates":
+                        item.GetComponent<Rollerskates>().Dash(player.transform.position, true);
                         break;
                 }
                 

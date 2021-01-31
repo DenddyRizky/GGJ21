@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2773680397166208272}
   - component: {fileID: 1543064194642525218}
   m_Layer: 0
-  m_Name: Enemy  1
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,11 +159,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d959d58848d8b94f862bc39bfb0f4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  libsTypes:
+  limbsTypes:
   - {fileID: 4623733101451521860, guid: 07493e0df42016b4ba8e93174107d624, type: 3}
   - {fileID: 4623733101451521860, guid: 7ed81fa1cf2f92b428f54c815ed017ab, type: 3}
   - {fileID: 4000923570021473711, guid: 9c94c36d61dc41940b540ddcc42a2c10, type: 3}
-  LibSlots:
+  - {fileID: 5919178130830755709, guid: 6dcdd6302baaf734f996f5bfe10fa494, type: 3}
+  LimbSlots:
   - {fileID: 9083062287392260852}
   - {fileID: 9083062287095450416}
   - {fileID: 9083062286694305376}

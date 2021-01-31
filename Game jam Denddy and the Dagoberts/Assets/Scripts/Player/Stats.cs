@@ -22,8 +22,8 @@ public class Stats : MonoBehaviour
     //adjusting all stats based on gained buffs and upgrades
     void Update()
     {
-        if (torso.currentTorso != null)
-            hp = torso.currentTorso.hp;
+        //if (torso.currentTorso != null)
+        //    hp = torso.currentTorso.hp;
 
         if (leg.currentLeg != null)
             spd = leg.currentLeg.spd;

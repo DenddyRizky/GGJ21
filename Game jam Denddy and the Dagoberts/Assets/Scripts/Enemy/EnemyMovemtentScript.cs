@@ -20,6 +20,7 @@ public class EnemyMovemtentScript : MonoBehaviour
     public float timer;
     public float checkTime;
     // Start is called before the first frame update
+    //when player is in range, determinded by big circle collider, switch from random waypoints around me, to random waypoints around player. turn off waypoints, perform dash and return to wyapoints
     void Start()
     {
         rotation = 1;
