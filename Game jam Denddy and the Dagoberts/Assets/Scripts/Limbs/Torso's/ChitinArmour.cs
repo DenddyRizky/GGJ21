@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ChitinArmour : Torso
 {
-    public bool equipped;
     public int armourHp;
     // Start is called before the first frame update
     void Start()

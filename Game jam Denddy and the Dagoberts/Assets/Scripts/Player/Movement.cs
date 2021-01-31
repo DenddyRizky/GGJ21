@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     public Arm arm;
     public Leg leg;
     public Torso torso;
+    public bool fallen;
 
     Animator anim;
 
@@ -23,6 +24,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        fallen = false;
         leg = GetComponent<Leg>();
         body = GetComponent<Rigidbody2D>();
         spd = GetComponent<Stats>();
@@ -33,13 +35,17 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (spd.spd != 0)
+        if (!fallen)
         {
-            runSpeed = spd.spd;
-        }        
+            if (spd.spd != 0)
+            {
+                runSpeed = spd.spd;
+            }        
 
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+        }
+
 
         anim.SetFloat("Horizontal", horizontal);
         anim.SetFloat("Vertical", vertical);
@@ -47,45 +53,54 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (horizontal != 0 && vertical != 0)
+        if (!fallen)
         {
-            horizontal *= diagmovevar;
-            vertical *= diagmovevar;
+            if (horizontal != 0 && vertical != 0 &! fallen)
+            {
+                horizontal *= diagmovevar;
+                vertical *= diagmovevar;
+            }
+            body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        } else
+        {
+            body.velocity = Vector2.zero;
         }
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-
-        
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Sneakers")
         {
             leg.activeLegs[1] = 1;
             Destroy(collision.gameObject);
-        }else if(collision.gameObject.name == "RollerSkates")
+        }
+        else if (collision.gameObject.name == "RollerSkates")
         {
             leg.activeLegs[2] = 2;
             Destroy(collision.gameObject);
-        }else if(collision.gameObject.name == "SpikeBoots")
+        }
+        else if (collision.gameObject.name == "SpikeBoots")
         {
             leg.activeLegs[3] = 3;
             Destroy(collision.gameObject);
         }
 
-        if(collision.gameObject.name == "ChitinArmour")
+        if (collision.gameObject.name == "ChitinArmour")
         {
-            torso.activeTorso[1] = 1;
-            Destroy(collision.gameObject);
-        }else if(collision.gameObject.name == "TentacleBody")
-        {
-            torso.activeTorso[2] = 2;
-            Destroy(collision.gameObject);
-        }else if(collision.gameObject.name == "AngelWings")
-        {
-            torso.activeTorso[3] = 3;
+            torso.activeTorso[0] = 1;
             Destroy(collision.gameObject);
         }
+        else if (collision.gameObject.name == "TentacleBody")
+        {
+            torso.activeTorso[1] = 2;
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.name == "AngelWings")
+        {
+            torso.activeTorso[2] = 3;
+            Destroy(collision.gameObject);
+        }
+
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)
