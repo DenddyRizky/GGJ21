@@ -22,7 +22,7 @@ public class Hole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerPos = player.transform.position;
+        //playerPos = player.transform.position;
         if (fallen)
             reset = true;
         else reset = false;     
@@ -42,9 +42,12 @@ public class Hole : MonoBehaviour
     {
         torso = collision.gameObject.GetComponent<Torso>();
         stats = collision.gameObject.GetComponent<Stats>();
+        Debug.Log(torso.currentTorso);
+        Debug.Log(torso.angelWings);
 
         if (collision.gameObject.name == "Player" && torso.currentTorso != torso.angelWings)
         {
+
             Vector2 dir = collision.transform.position - this.transform.position;
             dir.Normalize();
 
