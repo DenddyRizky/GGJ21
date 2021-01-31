@@ -104,9 +104,9 @@ MonoBehaviour:
   spikeBoots: {fileID: 0}
   enemy: 1
   player: {fileID: 0}
-  cooldown: 10
-  dashSpeed: 60
-  originalDashSpeed: 60
+  cooldown: 8
+  dashSpeed: 30
+  originalDashSpeed: 30
   maxDashDist: 60
 --- !u!60 &8642763956793065756
 PolygonCollider2D:

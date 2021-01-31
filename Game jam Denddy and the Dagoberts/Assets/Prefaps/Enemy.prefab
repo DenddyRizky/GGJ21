@@ -104,7 +104,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.4
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -141,12 +141,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: 0
+  playerPosition: {x: 0, y: 0}
   startPosition: {x: 0, y: 0}
   waypoint: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
   mag: 0
   timer: 0
   checkTime: 0
+  maxTime: 0
+  playerInRange: 0
 --- !u!114 &2773680397166208272
 MonoBehaviour:
   m_ObjectHideFlags: 0

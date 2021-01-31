@@ -61,7 +61,7 @@ public class Rollerskates : Leg
                 float dashSpeedMultiplier = 5f;
                 dashSpeed -= dashSpeed * dashSpeedMultiplier * Time.deltaTime;
 
-                float dashSpeedMinimum = 50f;
+                float dashSpeedMinimum = 30f;
                 if (dashSpeed < dashSpeedMinimum)
                     state = State.Normal;
                 break;
@@ -83,7 +83,7 @@ public class Rollerskates : Leg
 
         mouseDir = mousePos - transform.position;
         
-        Debug.DrawRay(transform.position, mouseDir, Color.green);
+        //Debug.DrawRay(transform.position, mouseDir, Color.green);
 
         //if (dash)
         //{               

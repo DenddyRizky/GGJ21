@@ -44,8 +44,8 @@ public class EnemyControllerScript : MonoBehaviour
             LimbSlots[i].transform.position = positionList[i];
             LimbSlots[i].transform.rotation = quaternionList[i];
         }
-     
 
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
