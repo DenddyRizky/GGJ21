@@ -38,7 +38,7 @@ public class MagicOrb : Arm
         Vector2 maxRangeBeam = point + (angle * maxLength);
 
         lr.SetPosition(0, point);
-
+        Debug.Log("POINT 1 LR: " + point);
         Vector2 angleToMouse = maxRangeBeam - mousePos;
         Vector2 angleToPoint = maxRangeBeam - point;
         angleToMouse.Normalize();
@@ -66,13 +66,14 @@ public class MagicOrb : Arm
 
         for (int i=0; i<2; i++)
         {
-            Debug.Log("BEFORE " + points[i]);
-            pointsList[i] = points[i];
-            Debug.Log("AFTER " + lr.transform.TransformPoint(points[i]));
+            //pointsList[i] = points[i];
         }
 
-        //Debug.Log("POINT 1: " + pointsList[0]);
+        Debug.Log("POINT 1 EC: " + pointsList[0]);
         //Debug.Log("POINT 2: " + pointsList[1]);
+
+        pointsList[0] = Vector2.zero;
+        pointsList[1] = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition);
 
         ec.points = pointsList;
         Destroy(ec, 0.2f);
