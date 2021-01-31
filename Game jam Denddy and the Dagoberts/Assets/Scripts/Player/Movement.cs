@@ -62,35 +62,40 @@ public class Movement : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Sneakers")
         {
             leg.activeLegs[1] = 1;
             Destroy(collision.gameObject);
-        }else if(collision.gameObject.name == "RollerSkates")
+        }
+        else if (collision.gameObject.name == "RollerSkates")
         {
             leg.activeLegs[2] = 2;
             Destroy(collision.gameObject);
-        }else if(collision.gameObject.name == "SpikeBoots")
+        }
+        else if (collision.gameObject.name == "SpikeBoots")
         {
             leg.activeLegs[3] = 3;
             Destroy(collision.gameObject);
         }
 
-        if(collision.gameObject.name == "ChitinArmour")
+        if (collision.gameObject.name == "ChitinArmour")
         {
             torso.activeTorso[0] = 1;
             Destroy(collision.gameObject);
-        }else if(collision.gameObject.name == "TentacleBody")
+        }
+        else if (collision.gameObject.name == "TentacleBody")
         {
             torso.activeTorso[1] = 2;
             Destroy(collision.gameObject);
-        }else if(collision.gameObject.name == "AngelWings")
+        }
+        else if (collision.gameObject.name == "AngelWings")
         {
             torso.activeTorso[2] = 3;
             Destroy(collision.gameObject);
         }
+
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)
