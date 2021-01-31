@@ -44,6 +44,10 @@ public class Movement : MonoBehaviour
 
             horizontal = Input.GetAxisRaw("Horizontal");
             vertical = Input.GetAxisRaw("Vertical");
+            if(horizontal != 0 || vertical != 0)
+            {
+                AudioManager.PlaySound(AudioManager.Sound.gunshot);
+            }
         }
 
     }

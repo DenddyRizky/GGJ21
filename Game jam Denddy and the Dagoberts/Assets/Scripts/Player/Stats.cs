@@ -6,7 +6,7 @@ public class Stats : MonoBehaviour
 {
     //stat variables
     public int hp, maxhp;
-    public float spd, atk, def;
+    public float spd, atkspd, def;
 
     private Leg leg;
     private Head head;
@@ -14,6 +14,7 @@ public class Stats : MonoBehaviour
 
     void Start()
     {
+        atkspd = 1;
         hp = 10;
         spd = 3;
         leg = GetComponent<Leg>();
@@ -25,8 +26,8 @@ public class Stats : MonoBehaviour
     void Update()
     {
         if (head.headNumber == 1)
-            atk *= 1.2f;
-        else atk *= 1f;
+            atkspd *= 0.6f;
+        else atkspd *= 1f;
         if (torso.currentTorso != null)
             hp = torso.currentTorso.hp;
         if (leg.currentLeg != null)

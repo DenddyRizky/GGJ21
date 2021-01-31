@@ -12,10 +12,12 @@ public class Arm : MonoBehaviour
     public float cooldownTime;
     public float cooldown;
     public Arm currentArm;
+    public Stats stat;
 
     // Start is called before the first frame update
     void Start()
     {
+        stat = gameObject.GetComponent<Stats>();
         types = new int[5];
     }
 
@@ -100,7 +102,7 @@ public class Arm : MonoBehaviour
     {
         if (attackCD && cooldown >= 0)
         {
-            cooldown -= Time.deltaTime;
+            cooldown -= (Time.deltaTime * stat.atkspd);
             Debug.Log(cooldown);
             if (cooldown <= 0)
             {
