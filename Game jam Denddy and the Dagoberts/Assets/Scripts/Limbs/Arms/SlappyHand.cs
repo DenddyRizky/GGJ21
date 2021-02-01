@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class SlappyHand : Arm
 {
-    public Transform attackPoint;
     public float attackRange;
     public LayerMask enemyLayers;
     Vector3 worldMousePos;
     Vector2 mouseDir;
-    bool enemy; 
+    bool enemy;
 
     // Update is called once per frame
     void Update()
@@ -24,7 +23,7 @@ public class SlappyHand : Arm
         this.enemy = Enemy;
         if (!enemy)
         {
-            worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            worldMousePos = camera.ScreenToWorldPoint(Input.mousePosition);
             mouseDir = (Vector2)(worldMousePos - transform.position);
 
             mouseDir.Normalize();

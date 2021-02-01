@@ -4,63 +4,75 @@ using UnityEngine;
 
 public class Arm : MonoBehaviour
 {
-    public float attack;
+    protected float attack;
     public float attackRate;
-    public int[] types;
-    public int weaponNumber;
+    protected int[] types;
+    protected int weaponNumber;
     public bool attackCD;
     public float cooldownTime;
     public float cooldown;
     public Arm currentArm;
-    public Stats stat;
-
-    public Animator anim;
+    protected Stats stat;
+    protected Animator anim;
+    public Transform attackPoint;
+    public Camera camera;
 
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
         stat = gameObject.GetComponent<Stats>();
         types = new int[5];
-=======
-       int[] types = { 1, 2, 3, 4, 5 };
-
+        types[0] = 1;
+        types[1] = 2;
+        types[2] = 3;
+        types[3] = 4;
+        types[4] = 5;
 
         anim = GetComponent<Animator>();
->>>>>>> main
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        moveAttackpoint();
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            weaponNumber = 0;
+            weaponNumber = 4;
             Debug.Log(0);
             switchArm();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            weaponNumber = 1;
+            weaponNumber = 0;
             Debug.Log(2);
             switchArm();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            weaponNumber = 2;
+            weaponNumber = 1;
             switchArm();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            weaponNumber = 3;
+            weaponNumber = 2;
             switchArm();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            weaponNumber = 4;
+            weaponNumber = 3;
             switchArm();
         }
         anim.SetInteger("Arms", weaponNumber);
+    }
+
+    void moveAttackpoint()
+    {
+        var worldMousePos = camera.ScreenToWorldPoint(Input.mousePosition);
+        var mouseDir = (Vector2)(worldMousePos - transform.position);
+
+        mouseDir.Normalize();
+        attackPoint.position = (Vector2)transform.position + mouseDir;
     }
 
     void switchArm()
@@ -112,7 +124,7 @@ public class Arm : MonoBehaviour
     {
         if (attackCD && cooldown >= 0)
         {
-            cooldown -= (Time.deltaTime * stat.atkspd);
+            cooldown -= (Time.deltaTime);
             Debug.Log(cooldown);
             if (cooldown <= 0)
             {

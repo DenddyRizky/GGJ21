@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TentacleSlap : Arm
 {
-    public Transform attackPoint;
     public float attackRange;
     public LayerMask enemyLayers;
     Vector3 worldMousePos;
@@ -19,7 +18,7 @@ public class TentacleSlap : Arm
     // Update is called once per frame
     void Update()
     {
-        worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        worldMousePos = camera.ScreenToWorldPoint(Input.mousePosition);
         mouseDir = (Vector2)(worldMousePos - transform.position);
 
         mouseDir.Normalize();

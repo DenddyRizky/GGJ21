@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MagicOrb : Arm
 {
-    public Camera cam;
-    public GameObject firePoint;
     public LineRenderer lr;
     public bool enemy;
     public float maxLength;
@@ -37,10 +35,10 @@ public class MagicOrb : Arm
     {
         
         lr.enabled = true;
-        if (enemy)
+        if (!enemy)
         {
-            point = firePoint.transform.position;
-             target = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition);
+            point = attackPoint.transform.position;
+             target = (Vector2)camera.ScreenToWorldPoint(Input.mousePosition);
         }
         else
         {
@@ -53,7 +51,7 @@ public class MagicOrb : Arm
 
         Vector2 maxRangeBeam = point + (angle * maxLength);
 
-        lr.SetPosition(0, point);
+        lr.SetPosition(0, new Vector3(point.x, point.y, 0));
 
         Vector2 angleToMouse = maxRangeBeam - target;
         Vector2 angleToPoint = maxRangeBeam - point;
@@ -62,10 +60,10 @@ public class MagicOrb : Arm
 
         if (angleToMouse != angleToPoint)
         {
-            lr.SetPosition(1, maxRangeBeam);
+            lr.SetPosition(1, new Vector3(maxRangeBeam.x, maxRangeBeam.y, 0));
         } else
         {
-            lr.SetPosition(1, target);
+            lr.SetPosition(1, new Vector3(target.x, target.y, 0));
         }
     }
 

@@ -12,7 +12,7 @@ public class LongNails : Arm
     }
 
     Rigidbody2D player;
-    public Transform attackPoint;
+
     public LayerMask enemyLayers;
     private int angle = 5;
     public float dashSpeed;
@@ -40,7 +40,7 @@ public class LongNails : Arm
     // Update is called once per frame
     void Update()
     {
-        worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        worldMousePos = camera.ScreenToWorldPoint(Input.mousePosition);
         mouseDir = (Vector2)(worldMousePos - transform.position);
 
         mouseDir.Normalize();
@@ -105,7 +105,7 @@ public class LongNails : Arm
 
     private void OnDrawGizmosSelected()
     {
-        Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 worldMousePos = camera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mouseDir = (Vector2)(worldMousePos - transform.position);
 
         mouseDir.Normalize();
